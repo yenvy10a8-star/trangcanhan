@@ -5,38 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Võ Ngọc Yến Vy | Portfolio Đồ Họa Kỹ Thuật Số</title>
   <style>
-    /* Root variables for light and dark mode */
+    /* ROOT VARIABLES */
     :root {
-      --bg: #fffdf8;
-      --surface: rgba(255, 255, 255, 0.9);
+      --bg: #fff9e8;
+      --surface: rgba(255, 255, 255, 0.96);
       --surface-strong: #ffffff;
-      --text: #1f1b16;
-      --text-soft: #6a6255;
+      --text: #1e1609;
+      --text-soft: #7d7058;
       --border: rgba(30, 30, 30, 0.08);
-      --accent: #f8c35e;
-      --accent-strong: #d89f2d;
-      --shadow: 0 22px 50px rgba(50, 40, 30, 0.08);
-      --radius: 28px;
+      --accent: #f8e5a9;
+      --accent-strong: #e6c66a;
+      --shadow: 0 26px 60px rgba(30, 20, 10, 0.09);
+      --radius: 32px;
       --radius-sm: 18px;
       --transition: 0.32s ease;
-      --max-width: 1200px;
+      --max-width: 1120px;
       color-scheme: light;
     }
 
     body.dark {
-      --bg: #14110d;
-      --surface: rgba(20, 17, 13, 0.92);
-      --surface-strong: #1c1814;
-      --text: #f7f2e9;
-      --text-soft: #c9bfb2;
+      --bg: #1b1812;
+      --surface: rgba(28, 24, 18, 0.92);
+      --surface-strong: #23201a;
+      --text: #f7f1e5;
+      --text-soft: #b7ad9d;
       --border: rgba(255, 255, 255, 0.08);
-      --accent: #f5da82;
-      --accent-strong: #e7b545;
-      --shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
+      --accent: #f7e2b0;
+      --accent-strong: #d8b56f;
+      --shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
       color-scheme: dark;
     }
 
-    /* Reset & base */
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -55,6 +55,11 @@
       transition: background var(--transition), color var(--transition);
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     img {
       max-width: 100%;
       display: block;
@@ -67,119 +72,25 @@
       font: inherit;
     }
 
-    a {
-      color: inherit;
-    }
-
-    /* Layout helpers */
+    /* LAYOUT */
     .container {
-      width: min(1120px, calc(100% - 2rem));
+      width: min(var(--max-width), calc(100% - 2rem));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 5rem 0;
-    }
-
-    .section-sm {
-      padding: 3rem 0;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2.5rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.75rem;
-    }
-
-    .glass {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-    }
-
-    .rounded {
-      border-radius: var(--radius);
-    }
-
-    .shadow-hover {
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .shadow-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(50, 40, 30, 0.12);
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      padding: 0.95rem 1.7rem;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: transform var(--transition), background var(--transition), color var(--transition), border var(--transition);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    .button-primary {
-      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
-      color: #18130c;
-      font-weight: 700;
-      box-shadow: 0 16px 32px rgba(248, 195, 94, 0.22);
-    }
-
-    .button-secondary {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--text);
-    }
-
-    .small-text {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 3vw, 3.5rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      max-width: 12ch;
-    }
-
-    .section-subtitle {
-      margin-top: 1rem;
-      color: var(--text-soft);
-      max-width: 55ch;
-      line-height: 1.8;
-    }
-
-    /* Header */
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       backdrop-filter: blur(18px);
-      background: rgba(255, 253, 248, 0.88);
-      border-bottom: 1px solid rgba(30, 30, 30, 0.04);
+      background: rgba(255, 249, 236, 0.82);
+      border-bottom: 1px solid var(--border);
       transition: background var(--transition), border-color var(--transition);
     }
 
     body.dark header {
-      background: rgba(20, 17, 13, 0.88);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(27, 24, 18, 0.82);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
     }
 
     .header-inner {
@@ -187,36 +98,32 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .brand {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      gap: 1.5rem;
     }
 
     nav {
       display: flex;
       gap: 1.8rem;
+      flex-wrap: wrap;
       align-items: center;
     }
 
     nav a {
-      position: relative;
-      color: var(--text-soft);
       font-size: 0.95rem;
       font-weight: 500;
+      color: var(--text-soft);
+      position: relative;
       transition: color var(--transition);
     }
 
     nav a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
       left: 0;
+      bottom: -4px;
       width: 0;
       height: 2px;
-      background: var(--accent);
+      background: var(--accent-strong);
       transition: width var(--transition);
     }
 
@@ -231,23 +138,29 @@
     }
 
     .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       width: 3rem;
       height: 3rem;
-      border-radius: 16px;
+      border-radius: 18px;
       border: 1px solid var(--border);
       background: var(--surface);
+      display: grid;
+      place-items: center;
       cursor: pointer;
-      transition: background var(--transition), border-color var(--transition);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
     }
 
     .theme-toggle span {
       font-size: 1.1rem;
     }
 
-    /* Hero */
+    section {
+      padding: 5rem 0;
+    }
+
     .hero {
       min-height: calc(100vh - 76px);
       display: grid;
@@ -255,89 +168,90 @@
       gap: 2.5rem;
     }
 
-    .hero-left {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-intro {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.6rem;
       max-width: 640px;
     }
 
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: rgba(248, 195, 94, 0.18);
-      color: var(--text-strong, var(--text));
-      padding: 0.7rem 1rem;
-      border-radius: 999px;
-      font-weight: 600;
-      width: fit-content;
-    }
-
     .hero-title {
-      font-size: clamp(2.7rem, 5vw, 4.5rem);
-      line-height: 0.95;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      line-height: 1.03;
       letter-spacing: -0.05em;
+      max-width: 14ch;
     }
 
-    .hero-desc {
+    .hero-caption {
       color: var(--text-soft);
+      font-size: 1.05rem;
       line-height: 1.8;
-      max-width: 54ch;
+      max-width: 58ch;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions .button {
+      min-width: 160px;
     }
 
     .hero-card {
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       position: relative;
+      overflow: hidden;
+      min-height: 460px;
       display: grid;
       place-items: center;
-      padding: 2.3rem;
-      min-height: 480px;
-      overflow: hidden;
-      border-radius: 32px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 249, 240, 0.95) 100%);
-      box-shadow: var(--shadow);
-      transition: transform var(--transition);
+      transition: transform var(--transition), border-color var(--transition);
     }
 
     .hero-card:hover {
       transform: translateY(-6px);
+      border-color: rgba(230, 198, 106, 0.4);
     }
 
     .hero-card::before {
       content: '';
       position: absolute;
-      inset: -30% 0 0 -20%;
-      background: radial-gradient(circle at top left, rgba(248, 195, 94, 0.28), transparent 42%);
+      inset: -25% -15% 50% auto;
+      background: radial-gradient(circle at top left, rgba(248, 229, 161, 0.45), transparent 55%);
       pointer-events: none;
     }
 
     .avatar-frame {
-      width: 240px;
-      height: 240px;
-      border-radius: 32px;
-      background: linear-gradient(135deg, rgba(248, 195, 94, 0.25), rgba(255, 255, 255, 0.9));
+      width: 220px;
+      height: 220px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(248, 229, 161, 0.55), rgba(255, 255, 255, 0.95));
       display: grid;
       place-items: center;
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
-      overflow: hidden;
       margin-bottom: 2rem;
     }
 
     .avatar-shape {
-      width: 170px;
-      height: 170px;
-      border-radius: 30px;
-      background: linear-gradient(145deg, #ffe4a4, #ffffff);
+      width: 178px;
+      height: 178px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #fff4ca, #f7e6a5);
       display: grid;
       place-items: center;
-      box-shadow: 0 20px 50px rgba(248, 195, 94, 0.25);
+      box-shadow: 0 22px 45px rgba(232, 188, 68, 0.22);
       position: relative;
     }
 
@@ -345,210 +259,185 @@
       content: 'VY';
       font-size: 3.5rem;
       font-weight: 800;
-      color: #8b5f0b;
+      color: #7f612c;
       letter-spacing: -0.08em;
     }
 
-    .hero-card-content {
-      display: flex;
-      flex-direction: column;
+    .hero-card-body {
+      display: grid;
       gap: 1rem;
       text-align: center;
+      z-index: 1;
     }
 
-    .profile-name {
-      font-size: 1.7rem;
-      font-weight: 800;
+    .hero-card-title {
+      font-size: 1.6rem;
+      font-weight: 700;
     }
 
-    .profile-role {
+    .hero-card-subtitle {
       color: var(--text-soft);
       font-size: 1rem;
-      font-weight: 500;
     }
 
     .profile-meta {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
     }
 
     .profile-meta div {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 1rem 1.15rem;
+      padding: 1rem 1.1rem;
+    }
+
+    .profile-meta strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      color: var(--text);
     }
 
     .profile-meta span {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .profile-meta p {
       color: var(--text-soft);
       font-size: 0.95rem;
       line-height: 1.6;
     }
 
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
+    .section-title {
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      margin-bottom: 1rem;
     }
 
-    .about-card {
+    .section-intro {
+      color: var(--text-soft);
+      max-width: 60ch;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .projects-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
+
+    .card {
       padding: 2rem;
+      border-radius: var(--radius);
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      transition: transform var(--transition), border-color var(--transition);
     }
 
-    .about-card h3 {
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(230, 198, 106, 0.4);
+    }
+
+    .card h3 {
       margin-bottom: 1rem;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
 
-    .about-card p,
-    .about-card li {
+    .card p,
+    .card li {
       color: var(--text-soft);
       line-height: 1.75;
+      font-size: 0.98rem;
     }
 
-    .about-card ul {
+    .card ul {
+      list-style: none;
       margin-top: 1rem;
+      padding-left: 0;
       display: grid;
       gap: 0.75rem;
-      list-style: none;
-      padding-left: 0;
     }
 
-    .about-card li::before {
+    .card li::before {
       content: '•';
-      color: var(--accent);
-      display: inline-block;
-      width: 1rem;
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
+      color: var(--accent-strong);
+      margin-right: 0.65rem;
+      font-weight: 700;
     }
 
     .skill-card {
-      padding: 1.75rem;
+      padding: 1.8rem;
+      border-radius: 24px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
       transition: transform var(--transition), border-color var(--transition);
     }
 
     .skill-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(248, 195, 94, 0.4);
-    }
-
-    .skill-card h4 {
-      margin: 1rem 0 0.75rem;
-      font-size: 1.05rem;
-    }
-
-    .skill-card p {
-      color: var(--text-soft);
-      font-size: 0.96rem;
-      line-height: 1.75;
+      border-color: rgba(230, 198, 106, 0.4);
     }
 
     .skill-chip {
       display: inline-flex;
-      padding: 0.55rem 0.85rem;
-      background: rgba(248, 195, 94, 0.18);
+      padding: 0.5rem 0.95rem;
       border-radius: 999px;
-      color: #8b5f0b;
-      font-weight: 600;
-      font-size: 0.88rem;
+      background: rgba(248, 229, 161, 0.42);
+      color: #7f612c;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.75rem;
+    .skill-card h4 {
+      margin: 1rem 0 0.8rem;
+      font-size: 1.1rem;
     }
 
     .project-card {
-      padding: 1.8rem;
+      padding: 2rem;
+      border-radius: 28px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), border-color var(--transition);
     }
 
     .project-card:hover {
       transform: translateY(-10px);
-      border-color: rgba(248, 195, 94, 0.4);
-      box-shadow: 0 26px 60px rgba(50, 40, 30, 0.1);
+      border-color: rgba(230, 198, 106, 0.4);
+    }
+
+    .project-badge {
+      display: inline-flex;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(248, 229, 161, 0.34);
+      color: #7f612c;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
     }
 
     .project-card h4 {
-      margin-bottom: 0.85rem;
-      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
     }
 
     .project-card p {
       color: var(--text-soft);
       line-height: 1.75;
-      margin-bottom: 1.25rem;
     }
 
-    .project-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--accent-strong);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    /* Contact */
     .contact-grid {
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .contact-card {
-      padding: 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-
-    .contact-card p,
-    .contact-card a {
-      color: var(--text-soft);
-      line-height: 1.8;
-    }
-
-    .contact-card a {
-      display: inline-block;
-      margin-top: 0.8rem;
-      color: var(--accent-strong);
-      font-weight: 700;
     }
 
     .contact-list {
@@ -562,13 +451,12 @@
     .contact-list li {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 1rem 1.2rem;
-      background: rgba(248, 195, 94, 0.12);
-      border-radius: 18px;
-    }
-
-    .contact-list strong {
+      border-radius: 20px;
+      background: rgba(248, 229, 161, 0.22);
       color: var(--text);
+      font-weight: 600;
     }
 
     .footer {
@@ -582,36 +470,33 @@
       font-weight: 700;
     }
 
-    /* Animations */
     .fade-up {
       opacity: 0;
-      transform: translateY(25px);
-      animation: fadeInUp 0.85s ease forwards;
+      transform: translateY(24px);
+      animation: fadeUp 0.85s ease forwards;
     }
 
     .fade-up.delay-1 {
-      animation-delay: 0.1s;
+      animation-delay: 0.08s;
     }
 
     .fade-up.delay-2 {
-      animation-delay: 0.2s;
+      animation-delay: 0.16s;
     }
 
     .fade-up.delay-3 {
-      animation-delay: 0.3s;
+      animation-delay: 0.24s;
     }
 
-    @keyframes fadeInUp {
+    @keyframes fadeUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    /* Responsive */
     @media (max-width: 980px) {
-      .grid-2,
-      .grid-3,
+      .hero-grid,
       .about-grid,
       .skills-grid,
       .projects-grid,
@@ -625,61 +510,45 @@
     }
 
     @media (max-width: 720px) {
-      header {
-        padding: 0 1rem;
-      }
-
       .header-inner {
+        padding: 0 1rem;
         flex-wrap: wrap;
-        gap: 1rem;
       }
 
       nav {
-        flex-wrap: wrap;
         justify-content: center;
       }
 
       .hero-card {
         min-height: auto;
-        padding: 1.8rem;
-      }
-
-      .hero-left,
-      .hero-card-content {
-        align-items: center;
-        text-align: center;
+        padding: 2rem;
       }
 
       .profile-meta {
         grid-template-columns: 1fr;
       }
 
-      .hero-actions {
-        justify-content: center;
+      section {
+        padding: 3.5rem 0;
       }
     }
 
     @media (max-width: 520px) {
-      .section {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-      }
-
       .hero-title {
         font-size: 2.4rem;
       }
 
-      .hero-card {
-        padding: 1.5rem;
+      .hero-actions {
+        flex-direction: column;
       }
 
-      .avatar-frame {
-        width: 200px;
-        height: 200px;
+      .theme-toggle {
+        width: 2.8rem;
+        height: 2.8rem;
       }
 
-      .avatar-shape::after {
-        font-size: 3rem;
+      .hero-grid {
+        gap: 1.8rem;
       }
     }
   </style>
@@ -687,7 +556,7 @@
 <body>
   <header>
     <div class="container header-inner">
-      <a class="brand" href="#home">Yến Vy</a>
+      <a href="#home" class="brand">Yến Vy</a>
       <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -695,133 +564,135 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" id="themeButton" aria-label="Toggle theme">
+      <button id="themeButton" class="theme-toggle" aria-label="Toggle theme">
         <span id="themeIcon">🌙</span>
       </button>
     </div>
   </header>
 
   <main>
-    <section id="home" class="container hero fade-up">
-      <div class="hero-left">
-        <div class="hero-tag">Portfolio Đồ Họa Kỹ Thuật Số</div>
-        <h1 class="section-title">Tôi là Võ Ngọc Yến Vy — Sinh viên thiết kế sáng tạo.</h1>
-        <p class="hero-desc section-subtitle">Đam mê sản xuất trải nghiệm trực quan, thiết kế tối giản và hình ảnh thương hiệu tinh tế dành cho digital media.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Xem dự án</a>
-          <a class="button button-secondary" href="#contact">Liên hệ</a>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-intro fade-up">
+          <p class="hero-caption">Xin chào, tôi là</p>
+          <h1 class="hero-title">Võ Ngọc Yến Vy — Sinh viên thiết kế đồ họa.</h1>
+          <p class="hero-caption">Tôi chuyên thiết kế UI/UX, đồ họa kỹ thuật số và hình ảnh thương hiệu với phong cách minimal, tinh tế và sáng tạo.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Xem dự án</a>
+            <a class="button button-secondary" href="#contact">Liên hệ</a>
+          </div>
         </div>
-        <div class="small-text">Sinh viên Đại học Gia Định, ngành Đồ họa Kỹ thuật số, Khoa Công Nghệ Thông Tin.</div>
-      </div>
 
-      <div class="hero-card fade-up delay-1 shadow-hover">
-        <div class="avatar-frame">
-          <div class="avatar-shape"></div>
-        </div>
-        <div class="hero-card-content">
-          <p class="profile-role">Sinh viên / Designer</p>
-          <h2 class="profile-name">Võ Ngọc Yến Vy</h2>
-          <div class="profile-meta">
-            <div>
-              <span>Ngành</span>
-              <p>Đồ họa Kỹ thuật số</p>
-            </div>
-            <div>
-              <span>Trường</span>
-              <p>Đại học Gia Định</p>
+        <div class="hero-card fade-up delay-1">
+          <div class="avatar-frame">
+            <div class="avatar-shape"></div>
+          </div>
+          <div class="hero-card-body">
+            <p class="hero-card-subtitle">Sinh viên Đại học Gia Định</p>
+            <h2 class="hero-card-title">Đồ họa Kỹ thuật số</h2>
+            <div class="profile-meta">
+              <div>
+                <strong>Ngành</strong>
+                <span>Công Nghệ Thông Tin</span>
+              </div>
+              <div>
+                <strong>Trường</strong>
+                <span>Đại học Gia Định</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about">
       <div class="container fade-up">
-        <div class="section-title">Giới thiệu</div>
-        <p class="section-subtitle">Tôi tin rằng thiết kế đơn giản và dịu mắt tạo ra cảm xúc mạnh mẽ. Tôi chuyên về thiết kế UI/UX, nhận diện thương hiệu và hình ảnh số với phong cách thanh lịch.</p>
+        <h2 class="section-title">About</h2>
+        <p class="section-intro">Tôi xây dựng thiết kế tối giản nhưng giàu cảm xúc, ưu tiên không gian trắng và hệ thống typography rõ ràng để truyền tải câu chuyện thương hiệu.</p>
         <div class="about-grid">
-          <article class="about-card shadow-hover">
-            <h3>Về tôi</h3>
-            <p>Tôi đang theo học tại Đại học Gia Định, Khoa Công Nghệ Thông Tin. Tôi đam mê xây dựng giao diện và hệ thống nhận diện thương hiệu dành cho dự án kỹ thuật số.</p>
+          <article class="card">
+            <h3>Thông tin cá nhân</h3>
+            <p>Tôi là sinh viên ngành Đồ họa Kỹ thuật số tại Đại học Gia Định, thuộc Khoa Công Nghệ Thông Tin. Tôi tập trung vào giải pháp thiết kế đẹp, dễ dùng và có tính ứng dụng cao.</p>
             <ul>
-              <li>Họ và tên: Võ Ngọc Yến Vy</li>
+              <li>Tên: Võ Ngọc Yến Vy</li>
               <li>Nghề nghiệp: Sinh viên</li>
+              <li>Trường: Đại học Gia Định</li>
               <li>Ngành học: Đồ họa Kỹ thuật số</li>
               <li>Khoa: Công Nghệ Thông Tin</li>
             </ul>
           </article>
-          <article class="about-card shadow-hover">
-            <h3>Phong cách thiết kế</h3>
-            <p>Tôi sử dụng layout rõ ràng, nhiều khoảng trắng và typography tinh tế để giữ nội dung sạch, dễ nhớ và chuyên nghiệp.</p>
+          <article class="card">
+            <h3>Phương pháp</h3>
+            <p>Trọng tâm của tôi là thiết kế có chiều sâu, truyền tải rõ ràng và phù hợp với mục tiêu dự án. Tôi thích làm việc với gradient vàng nhẹ, khoảng trắng tinh khiết và trải nghiệm mượt mà.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills">
       <div class="container fade-up">
-        <div class="section-title">Kỹ năng</div>
-        <p class="section-subtitle">Các công cụ và năng lực tôi thường dùng để thực hiện dự án thiết kế.</p>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-intro">Các công cụ và thế mạnh thiết kế được tôi dùng để tạo ra sản phẩm nhìn chuyên nghiệp và cảm xúc.</p>
         <div class="skills-grid">
-          <article class="skill-card shadow-hover">
-            <div class="skill-chip">Photoshop</div>
+          <article class="skill-card">
+            <span class="skill-chip">Photoshop</span>
             <h4>Thiết kế ảnh</h4>
-            <p>Xử lý hình ảnh, compositing và visual design với độ chi tiết cao.</p>
+            <p>Biên tập ảnh, mockup sản phẩm và quảng cáo với tông màu nhẹ nhàng, sang trọng.</p>
           </article>
-          <article class="skill-card shadow-hover">
-            <div class="skill-chip">Illustrator</div>
+          <article class="skill-card">
+            <span class="skill-chip">Illustrator</span>
             <h4>Vector & Branding</h4>
-            <p>Thiết kế logo, hệ thống biểu tượng và mô đun nhận diện thương hiệu.</p>
+            <p>Thiết kế logo, icon và hệ thống nhận diện thương hiệu mềm mại, tinh tế.</p>
           </article>
-          <article class="skill-card shadow-hover">
-            <div class="skill-chip">Figma</div>
-            <h4>UI/UX Prototyping</h4>
-            <p>Wireframe, prototype và trải nghiệm người dùng rõ ràng, mạch lạc.</p>
+          <article class="skill-card">
+            <span class="skill-chip">Figma</span>
+            <h4>UI/UX</h4>
+            <p>Prototype, wireframe và hệ thống design token cho trải nghiệm người dùng liền mạch.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects">
       <div class="container fade-up">
-        <div class="section-title">Projects</div>
-        <p class="section-subtitle">Một số dự án demo thể hiện phong cách thiết kế tối giản và sang trọng.</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-intro">Một số dự án concept thể hiện định hướng design chuyên nghiệp và tinh tế.</p>
         <div class="projects-grid">
-          <article class="project-card shadow-hover">
-            <div class="project-badge">Website</div>
+          <article class="project-card">
+            <span class="project-badge">Website</span>
             <h4>Website bán hàng</h4>
-            <p>Thiết kế giao diện e-commerce với trải nghiệm mua sắm mượt mà và tinh tế.</p>
+            <p>Giao diện e-commerce hiện đại, tập trung vào trải nghiệm mua sắm nhẹ nhàng và trực quan.</p>
           </article>
-          <article class="project-card shadow-hover">
-            <div class="project-badge">Landing</div>
+          <article class="project-card">
+            <span class="project-badge">Landing</span>
             <h4>Fashion Landing Page</h4>
-            <p>Trang đích dành cho thương hiệu thời trang với hình ảnh nhẹ nhàng, sang trọng.</p>
+            <p>Trang đích thương hiệu thời trang với layout minimal và hình ảnh phong cách.</p>
           </article>
-          <article class="project-card shadow-hover">
-            <div class="project-badge">Education</div>
-            <h4>Hệ thống học trực tuyến</h4>
-            <p>Thiết kế nền tảng giáo dục với giao diện rõ ràng, dễ điều hướng và thân thiện.</p>
+          <article class="project-card">
+            <span class="project-badge">Education</span>
+            <h4>Platform học trực tuyến</h4>
+            <p>Thiết kế hệ thống học tập trực tuyến với cấu trúc thông tin rõ ràng và dễ sử dụng.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-sm">
+    <section id="contact" class="section-sm">
       <div class="container fade-up">
-        <div class="section-title">Contact</div>
+        <h2 class="section-title">Contact</h2>
         <div class="contact-grid">
-          <article class="contact-card shadow-hover">
+          <article class="card">
             <h3>Liên hệ</h3>
-            <p>Nếu bạn cần một designer UI/UX chuyên nghiệp và tinh tế, hãy liên hệ với tôi.</p>
-            <div class="contact-list">
+            <p>Nếu bạn cần một designer UI/UX & đồ họa kỹ thuật số có mắt thẩm mỹ và tư duy sinh viên năng động, tôi sẵn sàng hợp tác.</p>
+            <ul class="contact-list">
               <li><strong>Email</strong><span>yenvy10a8@gmail.com</span></li>
               <li><strong>Behance</strong><span>behance.net/yenvy</span></li>
               <li><strong>Dribbble</strong><span>dribbble.com/yenvy</span></li>
-            </div>
+            </ul>
           </article>
-          <article class="contact-card shadow-hover">
+          <article class="card">
             <h3>Thông tin thêm</h3>
-            <p>Tôi mong muốn tham gia dự án thiết kế đồ họa, UI/UX, và digital branding với nguồn cảm hứng sáng tạo.</p>
+            <p>Portfolio này được thiết kế để thể hiện phong cách minimal, màu vàng nhạt chủ đạo và trải nghiệm người dùng mượt mà.</p>
             <a href="mailto:yenvy10a8@gmail.com">Gửi email ngay</a>
           </article>
         </div>
@@ -834,19 +705,19 @@
   </footer>
 
   <script>
-    const themeButton = document.getElementById('themeButton');
-    const themeIcon = document.getElementById('themeIcon');
-    const currentTheme = localStorage.getItem('portfolio-theme');
+    const button = document.getElementById('themeButton');
+    const icon = document.getElementById('themeIcon');
+    const theme = localStorage.getItem('portfolio-theme');
 
-    if (currentTheme === 'dark') {
+    if (theme === 'dark') {
       document.body.classList.add('dark');
-      themeIcon.textContent = '☀️';
+      icon.textContent = '☀️';
     }
 
-    themeButton.addEventListener('click', () => {
+    button.addEventListener('click', () => {
       document.body.classList.toggle('dark');
       const isDark = document.body.classList.contains('dark');
-      themeIcon.textContent = isDark ? '☀️' : '🌙';
+      icon.textContent = isDark ? '☀️' : '🌙';
       localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
     });
   </script>
