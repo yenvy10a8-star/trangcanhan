@@ -8,30 +8,30 @@
    ROOT - CSS VARIABLES & THEME COLORS
    ================================================ */
 :root {
-  /* Primary Colors - Warm Yellow/Orange Palette */
-  --color-primary: #F6C661;
-  --color-primary-light: #F9DA92;
-  --color-secondary: #DA8A23;
-  --color-tertiary: #A65028;
-  --color-cream: #FFF1CF;
+  /* Primary Colors - Soft Yellow/Orange Palette */
+  --color-primary: #F3D17A;
+  --color-primary-light: #FFDD8C;
+  --color-secondary: #D89F3F;
+  --color-tertiary: #A56B2A;
+  --color-cream: #FFF6D5;
 
   /* Light Mode Colors */
-  --bg-light: #FFF4D1;
-  --bg-light-secondary: #FFF7E5;
-  --text-light: #3F2813;
-  --text-light-secondary: #856443;
-  --border-light: rgba(100, 65, 28, 0.12);
+  --bg-light: #FFFFFF;
+  --bg-light-secondary: #F9F9F9;
+  --text-light: #1a1a1a;
+  --text-light-secondary: #666666;
+  --border-light: #E5E5E5;
 
   /* Dark Mode Colors */
-  --bg-dark: #3f2b19;
-  --bg-dark-secondary: #2d1e12;
-  --text-dark: #FFF3D9;
-  --text-dark-secondary: #C2A879;
-  --border-dark: rgba(255, 255, 255, 0.08);
+  --bg-dark: #0F0F0F;
+  --bg-dark-secondary: #1a1a1a;
+  --text-dark: #FFFFFF;
+  --text-dark-secondary: #B0B0B0;
+  --border-dark: #2a2a2a;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #FFF1D6 0%, #F6C661 100%);
-  --gradient-warm: linear-gradient(135deg, #F9DA92 0%, #DA8A23 100%);
+  --gradient-primary: linear-gradient(135deg, #FFF6D5 0%, #F3D17A 45%, #D89F3F 100%);
+  --gradient-warm: linear-gradient(135deg, #F3D17A 0%, #D89F3F 100%);
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -503,21 +503,7 @@ a:hover {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(135deg, #D96B2B, #FFB53C);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-.profile-name {
-  color: white;
-  margin-bottom: var(--spacing-sm);
-}
-
-.profile-title {
+    background: linear-gradient(135deg, #D89F3F, #FFDD8C);
   color: rgba(255, 255, 255, 0.8);
   font-size: var(--font-size-base);
   margin-bottom: var(--spacing-lg);
@@ -827,10 +813,10 @@ a:hover {
   animation: shimmer 3s infinite;
 }
 
-.project-img-1 { background: linear-gradient(135deg, #F6B24A 0%, #FFB53C 100%); }
-.project-img-2 { background: linear-gradient(135deg, #FFB53C 0%, #D96B2B 100%); }
-.project-img-3 { background: linear-gradient(135deg, #D96B2B 0%, #A6402A 100%); }
-.project-img-4 { background: linear-gradient(135deg, #A6402A 0%, #F6B24A 100%); }
+.project-img-1 { background: linear-gradient(135deg, #fff6d5 0%, #f3d17a 100%); }
+.project-img-2 { background: linear-gradient(135deg, #f3d17a 0%, #d89f3f 100%); }
+.project-img-3 { background: linear-gradient(135deg, #d89f3f 0%, #a56b2a 100%); }
+.project-img-4 { background: linear-gradient(135deg, #a56b2a 0%, #fff6d5 100%); }
 
 .project-info {
   padding: var(--spacing-lg);
@@ -1369,16 +1355,16 @@ a:hover {
 */
 
 :root {
-  --bg: #fff1d6;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: rgba(255, 255, 255, 0.92);
-  --surface-soft: rgba(255, 255, 255, 0.42);
-  --text: #2d180f;
-  --muted: #755444;
-  --accent: #f6b24a;
-  --accent-soft: #ffb53c;
-  --accent-deep: #d96b2b;
-  --accent-dark: #a6402a;
+  --bg: #fff6d5;
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --surface-soft: rgba(255, 255, 255, 0.45);
+  --text: #2c170f;
+  --muted: #7e684f;
+  --accent: #f3d17a;
+  --accent-soft: #ffdd8c;
+  --accent-deep: #d89f3f;
+  --accent-dark: #a56b2a;
   --shadow: 0 35px 90px rgba(52, 26, 8, 0.12);
   --radius: 32px;
   --radius-sm: 24px;
@@ -1397,10 +1383,10 @@ a:hover {
   --surface-soft: rgba(34, 24, 21, 0.45);
   --text: #f6ede3;
   --muted: #b9987f;
-  --accent: #f6b24a;
-  --accent-soft: #ffb53c;
-  --accent-deep: #d96b2b;
-  --accent-dark: #ff9f3c;
+  --accent: #f3d17a;
+  --accent-soft: #ffdd8c;
+  --accent-deep: #d89f3f;
+  --accent-dark: #a56b2a;
   --shadow: 0 35px 90px rgba(0, 0, 0, 0.35);
   --border: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -1419,8 +1405,8 @@ html {
 body {
   min-height: 100vh;
   font-family: var(--font);
-  background: radial-gradient(circle at top left, rgba(255, 245, 222, 0.92), transparent 28%),
-              linear-gradient(135deg, #f6b24a 0%, #ffb53c 55%, #fff1d6 100%);
+  background: radial-gradient(circle at top left, rgba(255, 246, 216, 0.92), transparent 28%),
+              linear-gradient(135deg, #fff6d5 0%, #f3d17a 55%, #d89f3f 100%);
   color: var(--text);
   overflow-x: hidden;
 }
@@ -1766,7 +1752,7 @@ section {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #fff1d6 0%, #f6b24a 100%);
+  background: linear-gradient(135deg, #fff6d5 0%, #f3d17a 100%);
   box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.75);
 }
 
@@ -2099,19 +2085,19 @@ section {
 }
 
 .image-1 {
-  background: linear-gradient(135deg, #fff1d6, #f6b24a);
+  background: linear-gradient(135deg, #fff6d5, #f3d17a);
 }
 
 .image-2 {
-  background: linear-gradient(135deg, #ffecd9, #d96b2b);
+  background: linear-gradient(135deg, #fff2cf, #d89f3f);
 }
 
 .image-3 {
-  background: linear-gradient(135deg, #ffe9c2, #ffb53c);
+  background: linear-gradient(135deg, #fff0b4, #ffdd8c);
 }
 
 .image-4 {
-  background: linear-gradient(135deg, #f9d9ad, #a6402a);
+  background: linear-gradient(135deg, #f4cb80, #a56b2a);
 }
 
 .project-copy {
