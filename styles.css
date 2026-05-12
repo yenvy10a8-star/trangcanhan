@@ -9,29 +9,29 @@
    ================================================ */
 :root {
   /* Primary Colors - Warm Yellow/Orange Palette */
-  --color-primary: #F6B24A;
-  --color-primary-light: #FFB53C;
-  --color-secondary: #D96B2B;
-  --color-tertiary: #A6402A;
-  --color-cream: #FFF1D6;
+  --color-primary: #F6C661;
+  --color-primary-light: #F9DA92;
+  --color-secondary: #DA8A23;
+  --color-tertiary: #A65028;
+  --color-cream: #FFF1CF;
 
   /* Light Mode Colors */
-  --bg-light: #FFFFFF;
-  --bg-light-secondary: #F9F9F9;
-  --text-light: #1a1a1a;
-  --text-light-secondary: #666666;
-  --border-light: #E5E5E5;
+  --bg-light: #FFF4D1;
+  --bg-light-secondary: #FFF7E5;
+  --text-light: #3F2813;
+  --text-light-secondary: #856443;
+  --border-light: rgba(100, 65, 28, 0.12);
 
   /* Dark Mode Colors */
-  --bg-dark: #0F0F0F;
-  --bg-dark-secondary: #1a1a1a;
-  --text-dark: #FFFFFF;
-  --text-dark-secondary: #B0B0B0;
-  --border-dark: #2a2a2a;
+  --bg-dark: #3f2b19;
+  --bg-dark-secondary: #2d1e12;
+  --text-dark: #FFF3D9;
+  --text-dark-secondary: #C2A879;
+  --border-dark: rgba(255, 255, 255, 0.08);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #F6B24A 0%, #FFB53C 100%);
-  --gradient-warm: linear-gradient(135deg, #FFB53C 0%, #D96B2B 100%);
+  --gradient-primary: linear-gradient(135deg, #FFF1D6 0%, #F6C661 100%);
+  --gradient-warm: linear-gradient(135deg, #F9DA92 0%, #DA8A23 100%);
 
   /* Spacing */
   --spacing-xs: 0.5rem;
