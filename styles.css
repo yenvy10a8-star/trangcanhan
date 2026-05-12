@@ -15,35 +15,72 @@
   --transition: 0.34s ease;
   --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-.theme-toggle:checked ~ .site-header,
-.theme-toggle:checked ~ main,
-.theme-toggle:checked ~ .site-footer {
-  color: #f7f3ee;
-}
-.theme-toggle:checked ~ .site-header {
-  background: rgba(30, 24, 22, 0.85);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-.theme-toggle:checked ~ main {
-  background: linear-gradient(135deg, #221b18 0%, #3a312d 50%, #1b1210 100%);
-}
-.theme-toggle:checked ~ main::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(18, 14, 12, 0.14);
-  pointer-events: none;
-}
-.theme-toggle:checked ~ .site-header .nav-menu a,
-.theme-toggle:checked ~ .site-header .brand,
-.theme-toggle:checked ~ .site-header .theme-switch {
+#themeToggle:checked + header,
+#themeToggle:checked ~ .site-footer {
   color: #ece6df;
 }
-.theme-toggle:checked ~ .theme-switch {
-  background: rgba(255, 255, 255, 0.14);
+#themeToggle:checked + header {
+  background: rgba(20, 16, 14, 0.92);
+  border-color: rgba(255, 255, 255, 0.08);
 }
-.theme-toggle:checked ~ .theme-switch span {
-  background: #fff;
+#themeToggle:checked ~ main {
+  background: linear-gradient(135deg, #1f1814 0%, #322a24 40%, #1a120f 100%);
+}
+#themeToggle:checked ~ .site-footer {
+  background: rgba(23, 17, 14, 0.9);
+}
+#themeToggle:checked + header .nav-menu a,
+#themeToggle:checked + header .brand,
+#themeToggle:checked + header .theme-switch {
+  color: #ece6df;
+}
+#themeToggle:checked + header .theme-switch {
+  background: rgba(255, 255, 255, 0.12);
+}
+#themeToggle:checked ~ main .hero-copy p,
+#themeToggle:checked ~ main .section-head p,
+#themeToggle:checked ~ main .timeline-desc,
+#themeToggle:checked ~ main .project-copy p,
+#themeToggle:checked ~ main .profile-info p,
+#themeToggle:checked ~ main .social-links a {
+  color: #d9ccc1;
+}
+#themeToggle:checked ~ main .hero-card,
+#themeToggle:checked ~ main .info-card,
+#themeToggle:checked ~ main .timeline-card,
+#themeToggle:checked ~ main .skill-card,
+#themeToggle:checked ~ main .project-card,
+#themeToggle:checked ~ main .contact-form,
+#themeToggle:checked ~ main .contact-copy {
+  background: rgba(26, 20, 17, 0.82);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f3ece4;
+}
+#themeToggle:checked ~ main .hero-stats div,
+#themeToggle:checked ~ main .profile-meta span,
+#themeToggle:checked ~ main .skill-icon,
+#themeToggle:checked ~ main .social-links a,
+#themeToggle:checked ~ .site-footer .top-button {
+  background: rgba(255, 255, 255, 0.08);
+}
+#themeToggle:checked ~ main .hero-stats strong,
+#themeToggle:checked ~ main .profile-meta span,
+#themeToggle:checked ~ main .skill-card h3,
+#themeToggle:checked ~ main .project-copy h3,
+#themeToggle:checked ~ main .profile-info h2,
+#themeToggle:checked ~ main .section-head h2,
+#themeToggle:checked ~ main .top-button,
+#themeToggle:checked ~ .site-footer p {
+  color: #f3ece4;
+}
+#themeToggle:checked ~ main .button-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f3ece4;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+#themeToggle:checked ~ main .button-primary {
+  background: linear-gradient(135deg, #f6b24a, #ffb53c);
+  color: #1f1711;
 }
 
 /* RESET */
@@ -152,26 +189,50 @@ ul {
   pointer-events: none;
 }
 .theme-switch {
-  width: 52px;
-  height: 28px;
+  width: 68px;
+  height: 34px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(33, 18, 10, 0.12);
-  display: grid;
-  place-items: center;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(33, 18, 10, 0.14);
+  position: relative;
   cursor: pointer;
-  transition: transform var(--transition), background var(--transition);
+  transition: background var(--transition), border-color var(--transition);
 }
-.theme-switch span {
-  width: 20px;
-  height: 20px;
+.theme-switch .theme-switch-thumb {
+  position: absolute;
+  left: 6px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 12px 30px rgba(255, 181, 60, 0.18);
-  transition: transform 0.35s ease;
+  box-shadow: 0 14px 32px rgba(255, 181, 60, 0.2);
+  transition: transform 0.35s ease, background var(--transition);
 }
-.theme-toggle:checked + header .theme-switch span {
-  transform: translateX(24px);
+.theme-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #a6402a;
+  opacity: 0.7;
+  transition: opacity var(--transition), color var(--transition);
+}
+.theme-icon-sun {
+  left: 10px;
+  opacity: 1;
+}
+.theme-icon-moon {
+  right: 10px;
+  opacity: 0.35;
+}
+#themeToggle:checked + header .theme-switch .theme-switch-thumb {
+  transform: translateX(34px);
+}
+#themeToggle:checked + header .theme-switch .theme-icon-sun {
+  opacity: 0.35;
+}
+#themeToggle:checked + header .theme-switch .theme-icon-moon {
+  opacity: 1;
 }
 
 .hero-section {
