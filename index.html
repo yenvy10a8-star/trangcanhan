@@ -3,716 +3,589 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Võ Ngọc Yến Vy | Portfolio Đồ Họa Kỹ Thuật Số</title>
-  <style>
-    /* ROOT VARIABLES */
-    :root {
-      --bg: #fff9e8;
-      --surface: rgba(255, 255, 255, 0.96);
-      --surface-strong: #ffffff;
-      --text: #1e1609;
-      --text-soft: #7d7058;
-      --border: rgba(30, 30, 30, 0.08);
-      --accent: #f8e5a9;
-      --accent-strong: #e6c66a;
-      --shadow: 0 26px 60px rgba(30, 20, 10, 0.09);
-      --radius: 32px;
-      --radius-sm: 18px;
-      --transition: 0.32s ease;
-      --max-width: 1120px;
-      color-scheme: light;
-    }
-
-    body.dark {
-      --bg: #1b1812;
-      --surface: rgba(28, 24, 18, 0.92);
-      --surface-strong: #23201a;
-      --text: #f7f1e5;
-      --text-soft: #b7ad9d;
-      --border: rgba(255, 255, 255, 0.08);
-      --accent: #f7e2b0;
-      --accent-strong: #d8b56f;
-      --shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
-      color-scheme: dark;
-    }
-
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      transition: background var(--transition), color var(--transition);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button,
-    input,
-    textarea,
-    a {
-      font: inherit;
-    }
-
-    /* LAYOUT */
-    .container {
-      width: min(var(--max-width), calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(255, 249, 236, 0.82);
-      border-bottom: 1px solid var(--border);
-      transition: background var(--transition), border-color var(--transition);
-    }
-
-    body.dark header {
-      background: rgba(27, 24, 18, 0.82);
-      border-bottom-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .header-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-soft);
-      position: relative;
-      transition: color var(--transition);
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--accent-strong);
-      transition: width var(--transition);
-    }
-
-    nav a:hover,
-    nav a:focus-visible {
-      color: var(--text);
-    }
-
-    nav a:hover::after,
-    nav a:focus-visible::after {
-      width: 100%;
-    }
-
-    .theme-toggle {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: background var(--transition), border-color var(--transition), transform var(--transition);
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-    }
-
-    .theme-toggle span {
-      font-size: 1.1rem;
-    }
-
-    section {
-      padding: 5rem 0;
-    }
-
-    .hero {
-      min-height: calc(100vh - 76px);
-      display: grid;
-      align-items: center;
-      gap: 2.5rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-intro {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
-      max-width: 640px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      line-height: 1.03;
-      letter-spacing: -0.05em;
-      max-width: 14ch;
-    }
-
-    .hero-caption {
-      color: var(--text-soft);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      max-width: 58ch;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-actions .button {
-      min-width: 160px;
-    }
-
-    .hero-card {
-      padding: 2.5rem;
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      min-height: 460px;
-      display: grid;
-      place-items: center;
-      transition: transform var(--transition), border-color var(--transition);
-    }
-
-    .hero-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(230, 198, 106, 0.4);
-    }
-
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      inset: -25% -15% 50% auto;
-      background: radial-gradient(circle at top left, rgba(248, 229, 161, 0.45), transparent 55%);
-      pointer-events: none;
-    }
-
-    .avatar-frame {
-      width: 220px;
-      height: 220px;
-      border-radius: 34px;
-      background: linear-gradient(135deg, rgba(248, 229, 161, 0.55), rgba(255, 255, 255, 0.95));
-      display: grid;
-      place-items: center;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
-      margin-bottom: 2rem;
-    }
-
-    .avatar-shape {
-      width: 178px;
-      height: 178px;
-      border-radius: 28px;
-      background: linear-gradient(145deg, #fff4ca, #f7e6a5);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 22px 45px rgba(232, 188, 68, 0.22);
-      position: relative;
-    }
-
-    .avatar-shape::after {
-      content: 'VY';
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: #7f612c;
-      letter-spacing: -0.08em;
-    }
-
-    .hero-card-body {
-      display: grid;
-      gap: 1rem;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .hero-card-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .hero-card-subtitle {
-      color: var(--text-soft);
-      font-size: 1rem;
-    }
-
-    .profile-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.75rem;
-    }
-
-    .profile-meta div {
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1rem 1.1rem;
-    }
-
-    .profile-meta strong {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .profile-meta span {
-      color: var(--text-soft);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .section-title {
-      font-size: clamp(2.2rem, 3vw, 3rem);
-      margin-bottom: 1rem;
-    }
-
-    .section-intro {
-      color: var(--text-soft);
-      max-width: 60ch;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .about-grid,
-    .skills-grid,
-    .projects-grid,
-    .contact-grid {
-      display: grid;
-      gap: 1.75rem;
-    }
-
-    .about-grid {
-      grid-template-columns: 1.6fr 1fr;
-    }
-
-    .card {
-      padding: 2rem;
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(230, 198, 106, 0.4);
-    }
-
-    .card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .card p,
-    .card li {
-      color: var(--text-soft);
-      line-height: 1.75;
-      font-size: 0.98rem;
-    }
-
-    .card ul {
-      list-style: none;
-      margin-top: 1rem;
-      padding-left: 0;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .card li::before {
-      content: '•';
-      color: var(--accent-strong);
-      margin-right: 0.65rem;
-      font-weight: 700;
-    }
-
-    .skill-card {
-      padding: 1.8rem;
-      border-radius: 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(230, 198, 106, 0.4);
-    }
-
-    .skill-chip {
-      display: inline-flex;
-      padding: 0.5rem 0.95rem;
-      border-radius: 999px;
-      background: rgba(248, 229, 161, 0.42);
-      color: #7f612c;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .skill-card h4 {
-      margin: 1rem 0 0.8rem;
-      font-size: 1.1rem;
-    }
-
-    .project-card {
-      padding: 2rem;
-      border-radius: 28px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      border-color: rgba(230, 198, 106, 0.4);
-    }
-
-    .project-badge {
-      display: inline-flex;
-      padding: 0.55rem 0.9rem;
-      border-radius: 999px;
-      background: rgba(248, 229, 161, 0.34);
-      color: #7f612c;
-      font-weight: 700;
-      font-size: 0.88rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-card h4 {
-      margin-bottom: 0.75rem;
-      font-size: 1.15rem;
-    }
-
-    .project-card p {
-      color: var(--text-soft);
-      line-height: 1.75;
-    }
-
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 1.5rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .contact-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.2rem;
-      border-radius: 20px;
-      background: rgba(248, 229, 161, 0.22);
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .footer {
-      padding: 2.5rem 0 4rem;
-      text-align: center;
-      color: var(--text-soft);
-    }
-
-    .footer a {
-      color: var(--accent-strong);
-      font-weight: 700;
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      animation: fadeUp 0.85s ease forwards;
-    }
-
-    .fade-up.delay-1 {
-      animation-delay: 0.08s;
-    }
-
-    .fade-up.delay-2 {
-      animation-delay: 0.16s;
-    }
-
-    .fade-up.delay-3 {
-      animation-delay: 0.24s;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .skills-grid,
-      .projects-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .header-inner {
-        padding: 0 1rem;
-        flex-wrap: wrap;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .hero-card {
-        min-height: auto;
-        padding: 2rem;
-      }
-
-      .profile-meta {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 3.5rem 0;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .hero-title {
-        font-size: 2.4rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .theme-toggle {
-        width: 2.8rem;
-        height: 2.8rem;
-      }
-
-      .hero-grid {
-        gap: 1.8rem;
-      }
-    }
-  </style>
+  <title>Yến Vy | Đồ Họa Kỹ Thuật Số Designer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
+  <!-- Theme Toggle Checkbox (invisible) -->
+  <input type="checkbox" id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode" />
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-content">
       <a href="#home" class="brand">Yến Vy</a>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <button id="themeButton" class="theme-toggle" aria-label="Toggle theme">
-        <span id="themeIcon">🌙</span>
-      </button>
+
+      <div class="header-actions">
+        <label for="themeToggle" class="theme-switch" aria-label="Toggle dark mode">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </label>
+      </div>
     </div>
   </header>
 
+  <!-- Main Content -->
   <main>
-    <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <!-- Paw prints decoration - Top Left & Bottom Right -->
+      <div class="paw-decoration paw-top-left">
+        <div class="paw-print"></div>
+      </div>
+      <div class="paw-decoration paw-bottom-right">
+        <div class="paw-print"></div>
+      </div>
+
+      <!-- Floating particles -->
+      <div class="particle-container">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <!-- Hero Content - Left Column -->
+        <div class="hero-content animate-fade-up">
+          <span class="eyebrow">Portfolio</span>
+          <h1 class="hero-title">Đồ Họa<br/>Kỹ Thuật Số</h1>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Xem dự án</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Year</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Passion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card - Right Column -->
+        <div class="hero-card-wrapper animate-fade-up delay-100">
+          <div class="hero-card">
+            <div class="card-gradient"></div>
+            
+            <div class="profile-section">
+              <div class="badge">UI/UX · Graphic Design</div>
+              
+              <div class="avatar-container">
+                <div class="avatar-ring">
+                  <div class="avatar"></div>
+                </div>
+              </div>
+
+              <h2 class="profile-name">Võ Ngọc Yến Vy</h2>
+              <p class="profile-title">Digital Designer</p>
+
+              <div class="skills-list">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Illustrator</span>
+                <span class="skill-tag">HTML/CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section">
       <div class="container">
-        <div class="hero-card fade-up delay-1">
-          <div class="avatar-frame">
-            <div class="avatar-shape"></div>
+        <div class="section-header animate-fade-up">
+          <span class="section-label">About Me</span>
+          <h2>Sinh viên, Designer, Người sáng tạo</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text animate-fade-up delay-100">
+            <p>Tôi là <strong>Võ Ngọc Yến Vy</strong>, sinh viên ngành <strong>Công Nghệ Thông Tin</strong> tại Trường Đại học Gia Định, chuyên tâm vào <strong>Đồ Họa Kỹ Thuật Số</strong>.</p>
+            <p>Với đam mê thiết kế, tôi luôn khám phá những cách mới để tạo ra những trải nghiệm trực quan ấm áp, chuyên nghiệp và mang tính sáng tạo. Mỗi dự án của tôi đều phản ánh sự kết hợp hoàn hảo giữa thẩm mỹ minimalism, hiểu biết sâu sắc về UX/UI, và khả năng thực hiện kỹ thuật số cao cấp.</p>
           </div>
-          <div class="hero-card-body">
-            <p class="hero-card-subtitle">Sinh viên Đại học Gia Định</p>
-            <h2 class="hero-card-title">Đồ họa Kỹ thuật số</h2>
-            <div class="profile-meta">
-              <div>
-                <strong>Ngành</strong>
-                <span>Công Nghệ Thông Tin</span>
-              </div>
-              <div>
-                <strong>Trường</strong>
-                <span>Đại học Gia Định</span>
-              </div>
+
+          <div class="info-cards">
+            <div class="info-card animate-zoom delay-100">
+              <h3>📚 Học Tập</h3>
+              <p><strong>Trường Đại học Gia Định</strong><br/>Khoa: Công Nghệ Thông Tin<br/>Chuyên ngành: Đồ Họa Kỹ Thuật Số</p>
             </div>
-            <div class="hero-actions" style="margin-top: 1.75rem; justify-content: center;">
-              <a class="button button-primary" href="#projects">Xem dự án</a>
+
+            <div class="info-card animate-zoom delay-200">
+              <h3>🎨 Chuyên Môn</h3>
+              <p><strong>UI/UX Design<br/>Graphic Design<br/>Web Design</strong><br/>Thiết kế theo phong cách Apple Minimalism</p>
+            </div>
+
+            <div class="info-card animate-zoom delay-300">
+              <h3>⚙️ Công Cụ</h3>
+              <p><strong>Figma · Photoshop<br/>Illustrator · HTML/CSS</strong><br/>Các công cụ thiết kế và lập trình hiện đại</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container fade-up">
-        <h2 class="section-title">About</h2>
-        <p class="section-intro">Tôi xây dựng thiết kế tối giản nhưng giàu cảm xúc, ưu tiên không gian trắng và hệ thống typography rõ ràng để truyền tải câu chuyện thương hiệu.</p>
-        <div class="about-grid">
-          <article class="card">
-            <h3>Thông tin cá nhân</h3>
-            <p>Tôi là sinh viên ngành Đồ họa Kỹ thuật số tại Đại học Gia Định, thuộc Khoa Công Nghệ Thông Tin. Tôi tập trung vào giải pháp thiết kế đẹp, dễ dùng và có tính ứng dụng cao.</p>
-            <ul>
-              <li>Tên: Võ Ngọc Yến Vy</li>
-              <li>Nghề nghiệp: Sinh viên</li>
-              <li>Trường: Đại học Gia Định</li>
-              <li>Ngành học: Đồ họa Kỹ thuật số</li>
-              <li>Khoa: Công Nghệ Thông Tin</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Phương pháp</h3>
-            <p>Trọng tâm của tôi là thiết kế có chiều sâu, truyền tải rõ ràng và phù hợp với mục tiêu dự án. Tôi thích làm việc với gradient vàng nhẹ, khoảng trắng tinh khiết và trải nghiệm mượt mà.</p>
-          </article>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">Skills</span>
+          <h2>Năng lực thiết kế chuyên nghiệp</h2>
         </div>
-      </div>
-    </section>
 
-    <section id="skills">
-      <div class="container fade-up">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-intro">Các công cụ và thế mạnh thiết kế được tôi dùng để tạo ra sản phẩm nhìn chuyên nghiệp và cảm xúc.</p>
         <div class="skills-grid">
-          <article class="skill-card">
-            <span class="skill-chip">Photoshop</span>
-            <h4>Thiết kế ảnh</h4>
-            <p>Biên tập ảnh, mockup sản phẩm và quảng cáo với tông màu nhẹ nhàng, sang trọng.</p>
-          </article>
-          <article class="skill-card">
-            <span class="skill-chip">Illustrator</span>
-            <h4>Vector & Branding</h4>
-            <p>Thiết kế logo, icon và hệ thống nhận diện thương hiệu mềm mại, tinh tế.</p>
-          </article>
-          <article class="skill-card">
-            <span class="skill-chip">Figma</span>
-            <h4>UI/UX</h4>
-            <p>Prototype, wireframe và hệ thống design token cho trải nghiệm người dùng liền mạch.</p>
-          </article>
+          <div class="skill-card animate-zoom delay-100">
+            <div class="skill-icon">🎨</div>
+            <h3>UI Design</h3>
+            <p>Interface sạch sẽ, đẹp mắt và dễ sử dụng. Hệ thống thiết kế nhất quán, quy chuẩn cao.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 95%;"></div>
+            </div>
+            <span class="progress-text">95%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-200">
+            <div class="skill-icon">🖼️</div>
+            <h3>UX Design</h3>
+            <p>Trải nghiệm người dùng mượt mà, hành trình logic và dễ hiểu. Luôn đặt người dùng lên hàng đầu.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 92%;"></div>
+            </div>
+            <span class="progress-text">92%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-300">
+            <div class="skill-icon">🎭</div>
+            <h3>Graphic Design</h3>
+            <p>Visual sắc nét, thương hiệu ấm áp và độc đáo. Tạo dấu ấn qua anh chi em hình ảnh.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 90%;"></div>
+            </div>
+            <span class="progress-text">90%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-400">
+            <div class="skill-icon">💻</div>
+            <h3>Web Design</h3>
+            <p>Thiết kế web responsive, animation mượt mà, hiệu ứng chuyên nghiệp. Tối ưu cho mọi thiết bị.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 88%;"></div>
+            </div>
+            <span class="progress-text">88%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-500">
+            <div class="skill-icon">✏️</div>
+            <h3>Figma</h3>
+            <p>Thiết kế prototype, hệ thống UI, quy trình thiết kế nhanh chóng và hiệu quả.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 96%;"></div>
+            </div>
+            <span class="progress-text">96%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-600">
+            <div class="skill-icon">🎬</div>
+            <h3>Adobe Creative</h3>
+            <p>Photoshop, Illustrator, xử lý hình ảnh chuyên nghiệp, tạo vector chiều sâu.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 89%;"></div>
+            </div>
+            <span class="progress-text">89%</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="container fade-up">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-intro">Một số dự án concept thể hiện định hướng design chuyên nghiệp và tinh tế.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">Projects</span>
+          <h2>Danh mục dự án nổi bật</h2>
+        </div>
+
         <div class="projects-grid">
-          <article class="project-card">
-            <span class="project-badge">Website</span>
-            <h4>Website bán hàng</h4>
-            <p>Giao diện e-commerce hiện đại, tập trung vào trải nghiệm mua sắm nhẹ nhàng và trực quan.</p>
+          <article class="project-card animate-zoom delay-100">
+            <div class="project-image project-img-1"></div>
+            <div class="project-info">
+              <h3>Website Bán Hàng</h3>
+              <p>Giao diện thương mại điện tử tinh tế với trải nghiệm mua sắm tối giản, hiệu ứng hover mềm mại và quy trình thanh toán đơn giản.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
           </article>
-          <article class="project-card">
-            <span class="project-badge">Landing</span>
-            <h4>Fashion Landing Page</h4>
-            <p>Trang đích thương hiệu thời trang với layout minimal và hình ảnh phong cách.</p>
+
+          <article class="project-card animate-zoom delay-200">
+            <div class="project-image project-img-2"></div>
+            <div class="project-info">
+              <h3>LMS Dashboard</h3>
+              <p>Bảng điều khiển học trực tuyến với cấu trúc thông tin rõ ràng, giao diện quản lý khóa học hiện đại và tối ưu cho giáo viên.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
           </article>
-          <article class="project-card">
-            <span class="project-badge">Education</span>
-            <h4>Platform học trực tuyến</h4>
-            <p>Thiết kế hệ thống học tập trực tuyến với cấu trúc thông tin rõ ràng và dễ sử dụng.</p>
+
+          <article class="project-card animate-zoom delay-300">
+            <div class="project-image project-img-3"></div>
+            <div class="project-info">
+              <h3>School Website</h3>
+              <p>Thiết kế website trường học chuyên nghiệp, phản ánh thương hiệu thể chế, thông tin sinh viên và tính năng quản lý đơn giản.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="project-card animate-zoom delay-400">
+            <div class="project-image project-img-4"></div>
+            <div class="project-info">
+              <h3>Fashion Landing Page</h3>
+              <p>Trang đích thời trang hiện đại với phong cách minimalism, hình ảnh sản phẩm nổi bật và call-to-action rõ ràng, hiệu quả cao.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section-sm">
-      <div class="container fade-up">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <article class="card">
-            <h3>Liên hệ</h3>
-            <p>Nếu bạn cần một designer UI/UX & đồ họa kỹ thuật số có mắt thẩm mỹ và tư duy sinh viên năng động, tôi sẵn sàng hợp tác.</p>
-            <ul class="contact-list">
-              <li><strong>Email</strong><span>yenvy10a8@gmail.com</span></li>
-              <li><strong>Behance</strong><span>behance.net/yenvy</span></li>
-              <li><strong>Dribbble</strong><span>dribbble.com/yenvy</span></li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Thông tin thêm</h3>
-            <p>Portfolio này được thiết kế để thể hiện phong cách minimal, màu vàng nhạt chủ đạo và trải nghiệm người dùng mượt mà.</p>
-            <a href="mailto:yenvy10a8@gmail.com">Gửi email ngay</a>
-          </article>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">Let's Work Together</span>
+          <h2>Bắt đầu dự án tiếp theo của bạn</h2>
+          <p>Tôi luôn sẵn sàng hợp tác cho những dự án thiết kế sáng tạo. Hãy liên hệ với tôi qua email hoặc các nền tảng mạng xã hội.</p>
+        </div>
+
+        <div class="contact-content">
+          <form class="contact-form animate-fade-up delay-100" method="GET" action="#contact">
+            <div class="form-group">
+              <input type="text" placeholder="Tên của bạn" required aria-label="Name" />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email của bạn" required aria-label="Email" />
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Nội dung tin nhắn..." rows="6" required aria-label="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+
+          <div class="contact-info animate-fade-up delay-200">
+            <div class="contact-card">
+              <h3>📧 Email</h3>
+              <p><a href="mailto:yenvy10a8@gmail.com">yenvy10a8@gmail.com</a></p>
+            </div>
+
+            <div class="contact-card">
+              <h3>📱 Social</h3>
+              <div class="social-links">
+                <a href="#" class="social-icon" aria-label="Behance">Behance</a>
+                <a href="#" class="social-icon" aria-label="Dribbble">Dribbble</a>
+                <a href="#" class="social-icon" aria-label="Facebook">Facebook</a>
+                <a href="#" class="social-icon" aria-label="GitHub">GitHub</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <h3>📍 Location</h3>
+              <p>Thành phố Hồ Chí Minh<br/>Việt Nam</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container small-text">© 2026 Võ Ngọc Yến Vy. Portfolio thiết kế đồ họa UI/UX.</div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Võ Ngọc Yến Vy. All rights reserved.</p>
+      <a href="#home" class="back-to-top">↑ Back to Top</a>
+    </div>
   </footer>
 
-  <script>
-    const button = document.getElementById('themeButton');
-    const icon = document.getElementById('themeIcon');
-    const theme = localStorage.getItem('portfolio-theme');
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yến Vy | Đồ Họa Kỹ Thuật Số Designer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <input type="checkbox" id="themeToggle" class="theme-toggle" />
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand">Yến Vy</a>
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <label for="themeToggle" class="theme-switch" aria-label="Toggle dark mode">
+          <span></span>
+        </label>
+      </div>
+    </div>
+  </header>
 
-    if (theme === 'dark') {
-      document.body.classList.add('dark');
-      icon.textContent = '☀️';
-    }
+  <!-- Hero Section -->
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy animate-fade-up">
+          <span class="eyebrow">Designer Portfolio</span>
+          <h1>UI/UX & Graphic Designer</h1>
+          <p>Thiết kế trải nghiệm trực quan, hình ảnh thương hiệu tinh tế và hiệu ứng chuyển động nhẹ nhàng cho mọi dự án.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="button button-primary">View Projects</a>
+            <a href="#contact" class="button button-secondary">Contact Me</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>10+</strong>
+              <span>Projects</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>Year Experience</span>
+            </div>
+            <div>
+              <strong>UI/UX</strong>
+              <span>Specialist</span>
+            </div>
+          </div>
+        </div>
 
-    button.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      icon.textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
-    });
-  </script>
+        <div class="hero-card animate-fade-up delay-1">
+          <div class="hero-card__bg"></div>
+          <div class="profile-card">
+            <div class="profile-badge">UI/UX · Graphic</div>
+            <div class="avatar-ring">
+              <div class="avatar"></div>
+            </div>
+            <div class="profile-info">
+              <h2>Võ Ngọc Yến Vy</h2>
+              <p>Công Nghệ Thông Tin · Designer</p>
+            </div>
+            <div class="profile-meta">
+              <div>
+                <span>Figma</span>
+                <span>Photoshop</span>
+              </div>
+              <div>
+                <span>Illustrator</span>
+                <span>HTML/CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-paw"></div>
+          <div class="hero-particles">
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container section-grid">
+        <div class="section-head animate-fade-up">
+          <span class="section-label">About Me</span>
+          <h2>Chuyên môn thiết kế sáng tạo, đậm phong cách cao cấp.</h2>
+          <p>Tôi là UI/UX Designer chuyên thiết kế giải pháp kỹ thuật số với trải nghiệm phong phú, tối giản và cảm xúc ấm áp.</p>
+        </div>
+        <div class="about-cards">
+          <article class="info-card animate-zoom">
+            <h3>Hồ sơ</h3>
+            <p>Võ Ngọc Yến Vy - UI/UX Designer & Graphic Designer, khoa Công Nghệ Thông Tin.</p>
+            <ul>
+              <li><strong>Chuyên ngành:</strong> Đồ họa kỹ thuật số</li>
+              <li><strong>Mục tiêu:</strong> UI/UX Designer & Graphic Designer</li>
+              <li><strong>Kỹ năng:</strong> Figma, Photoshop, Illustrator, HTML/CSS</li>
+            </ul>
+          </article>
+          <article class="timeline-card animate-fade-up delay-1">
+            <h3>Experience</h3>
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <p class="timeline-title">UI/UX Project Designer</p>
+                <p class="timeline-desc">Thiết kế giao diện và trải nghiệm cho dự án web, mobile và thương hiệu kỹ thuật số.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <p class="timeline-title">1 Year Journey</p>
+                <p class="timeline-desc">Xây dựng danh mục dự án chuyên nghiệp, phong cách Apple Minimalism & Brand Design.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container section-head animate-fade-up">
+        <span class="section-label">Skills</span>
+        <h2>Năng lực thiết kế giúp hiện thực hóa ý tưởng thương hiệu.</h2>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card animate-zoom">
+          <div class="skill-icon">UI</div>
+          <h3>UI/UX Design</h3>
+          <p>Thiết kế interface sạch sẽ, hành trình mượt mà và dễ tương tác.</p>
+          <div class="progress-bar"><span style="width: 92%;"></span></div>
+        </article>
+        <article class="skill-card animate-zoom delay-1">
+          <div class="skill-icon">GD</div>
+          <h3>Graphic Design</h3>
+          <p>Visual tinh tế, thương hiệu ấm áp và gần gũi.</p>
+          <div class="progress-bar"><span style="width: 88%;"></span></div>
+        </article>
+        <article class="skill-card animate-zoom delay-2">
+          <div class="skill-icon">WD</div>
+          <h3>Web Design</h3>
+          <p>Thiết kế web responsive, hiệu ứng nhẹ nhàng và chuyên nghiệp.</p>
+          <div class="progress-bar"><span style="width: 86%;"></span></div>
+        </article>
+        <article class="skill-card animate-zoom delay-3">
+          <div class="skill-icon">FIG</div>
+          <h3>Figma</h3>
+          <p>Prototype sắc nét, hệ thống UI và quy trình thiết kế nhanh chóng.</p>
+          <div class="progress-bar"><span style="width: 95%;"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container section-head animate-fade-up">
+        <span class="section-label">Projects</span>
+        <h2>Danh mục dự án nổi bật, phong cách premium.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card animate-zoom">
+          <div class="project-image image-1"></div>
+          <div class="project-copy">
+            <h3>Website bán hàng</h3>
+            <p>Giao diện thương mại điện tử tinh tế với trải nghiệm mua sắm tối giản.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-1">
+          <div class="project-image image-2"></div>
+          <div class="project-copy">
+            <h3>LMS Dashboard</h3>
+            <p>Bảng điều khiển học trực tuyến với cấu trúc thông tin rõ ràng và nhẹ nhàng.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-2">
+          <div class="project-image image-3"></div>
+          <div class="project-copy">
+            <h3>School Website</h3>
+            <p>Thiết kế website trường học chuyên nghiệp, đúng phong cách thương hiệu.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-3">
+          <div class="project-image image-4"></div>
+          <div class="project-copy">
+            <h3>UI Mobile App</h3>
+            <p>Giao diện ứng dụng di động đơn giản, thân thiện và dễ sử dụng.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-4">
+          <div class="project-image image-5"></div>
+          <div class="project-copy">
+            <h3>Fashion Landing Page</h3>
+            <p>Trang đích thời trang với hình ảnh ấm áp và nhấn mạnh phong cách.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-5">
+          <div class="project-image image-6"></div>
+          <div class="project-copy">
+            <h3>Education Platform</h3>
+            <p>Thiết kế nền tảng giáo dục online hỗ trợ học viên dễ dàng tương tác.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid">
+        <div class="contact-copy animate-fade-up">
+          <span class="section-label">Contact</span>
+          <h2>Hợp tác cùng tôi để tạo ra sản phẩm tinh tế.</h2>
+          <p>Nếu bạn cần một portfolio cao cấp hoặc giao diện thương hiệu, hãy kết nối ngay.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Behance">Behance</a>
+            <a href="#" aria-label="Dribbble">Dribbble</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+        <form class="contact-form animate-fade-up delay-1">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Your email" />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project"></textarea>
+          </div>
+          <button type="submit" class="button button-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Võ Ngọc Yến Vy. Designed with minimalism and warmth.</p>
+      <a href="#home" class="top-button">Back to top</a>
+    </div>
+  </footer>
 </body>
 </html>
