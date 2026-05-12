@@ -3,7 +3,335 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yến Vy | UI/UX Designer Portfolio</title>
+  <title>Yến Vy | Đồ Họa Kỹ Thuật Số Designer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Theme Toggle Checkbox (invisible) -->
+  <input type="checkbox" id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode" />
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#home" class="brand">Yến Vy</a>
+      
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <label for="themeToggle" class="theme-switch" aria-label="Toggle dark mode">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <!-- Paw prints decoration - Top Left & Bottom Right -->
+      <div class="paw-decoration paw-top-left">
+        <div class="paw-print"></div>
+      </div>
+      <div class="paw-decoration paw-bottom-right">
+        <div class="paw-print"></div>
+      </div>
+
+      <!-- Floating particles -->
+      <div class="particle-container">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <!-- Hero Content - Left Column -->
+        <div class="hero-content animate-fade-up">
+          <span class="eyebrow">Designer Portfolio</span>
+          <h1 class="hero-title">Đồ Họa<br/>Kỹ Thuật Số</h1>
+          <p class="hero-desc">Thiết kế trải nghiệm trực quan, hình ảnh thương hiệu tinh tế và hiệu ứng chuyển động mượt mà cho mọi dự án kỹ thuật số.</p>
+          
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Year</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Passion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card - Right Column -->
+        <div class="hero-card-wrapper animate-fade-up delay-100">
+          <div class="hero-card">
+            <div class="card-gradient"></div>
+            
+            <div class="profile-section">
+              <div class="badge">UI/UX · Graphic Design</div>
+              
+              <div class="avatar-container">
+                <div class="avatar-ring">
+                  <div class="avatar"></div>
+                </div>
+              </div>
+
+              <h2 class="profile-name">Võ Ngọc Yến Vy</h2>
+              <p class="profile-title">Digital Designer</p>
+
+              <div class="skills-list">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Illustrator</span>
+                <span class="skill-tag">HTML/CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">About Me</span>
+          <h2>Sinh viên, Designer, Người sáng tạo</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text animate-fade-up delay-100">
+            <p>Tôi là <strong>Võ Ngọc Yến Vy</strong>, sinh viên ngành <strong>Công Nghệ Thông Tin</strong> tại Trường Đại học Gia Định, chuyên tâm vào <strong>Đồ Họa Kỹ Thuật Số</strong>.</p>
+            <p>Với đam mê thiết kế, tôi luôn khám phá những cách mới để tạo ra những trải nghiệm trực quan ấm áp, chuyên nghiệp và mang tính sáng tạo. Mỗi dự án của tôi đều phản ánh sự kết hợp hoàn hảo giữa thẩm mỹ minimalism, hiểu biết sâu sắc về UX/UI, và khả năng thực hiện kỹ thuật số cao cấp.</p>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card animate-zoom delay-100">
+              <h3>📚 Học Tập</h3>
+              <p><strong>Trường Đại học Gia Định</strong><br/>Khoa: Công Nghệ Thông Tin<br/>Chuyên ngành: Đồ Họa Kỹ Thuật Số</p>
+            </div>
+
+            <div class="info-card animate-zoom delay-200">
+              <h3>🎨 Chuyên Môn</h3>
+              <p><strong>UI/UX Design<br/>Graphic Design<br/>Web Design</strong><br/>Thiết kế theo phong cách Apple Minimalism</p>
+            </div>
+
+            <div class="info-card animate-zoom delay-300">
+              <h3>⚙️ Công Cụ</h3>
+              <p><strong>Figma · Photoshop<br/>Illustrator · HTML/CSS</strong><br/>Các công cụ thiết kế và lập trình hiện đại</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">Skills</span>
+          <h2>Năng lực thiết kế chuyên nghiệp</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card animate-zoom delay-100">
+            <div class="skill-icon">🎨</div>
+            <h3>UI Design</h3>
+            <p>Interface sạch sẽ, đẹp mắt và dễ sử dụng. Hệ thống thiết kế nhất quán, quy chuẩn cao.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 95%;"></div>
+            </div>
+            <span class="progress-text">95%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-200">
+            <div class="skill-icon">🖼️</div>
+            <h3>UX Design</h3>
+            <p>Trải nghiệm người dùng mượt mà, hành trình logic và dễ hiểu. Luôn đặt người dùng lên hàng đầu.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 92%;"></div>
+            </div>
+            <span class="progress-text">92%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-300">
+            <div class="skill-icon">🎭</div>
+            <h3>Graphic Design</h3>
+            <p>Visual sắc nét, thương hiệu ấm áp và độc đáo. Tạo dấu ấn qua anh chi em hình ảnh.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 90%;"></div>
+            </div>
+            <span class="progress-text">90%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-400">
+            <div class="skill-icon">💻</div>
+            <h3>Web Design</h3>
+            <p>Thiết kế web responsive, animation mượt mà, hiệu ứng chuyên nghiệp. Tối ưu cho mọi thiết bị.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 88%;"></div>
+            </div>
+            <span class="progress-text">88%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-500">
+            <div class="skill-icon">✏️</div>
+            <h3>Figma</h3>
+            <p>Thiết kế prototype, hệ thống UI, quy trình thiết kế nhanh chóng và hiệu quả.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 96%;"></div>
+            </div>
+            <span class="progress-text">96%</span>
+          </div>
+
+          <div class="skill-card animate-zoom delay-600">
+            <div class="skill-icon">🎬</div>
+            <h3>Adobe Creative</h3>
+            <p>Photoshop, Illustrator, xử lý hình ảnh chuyên nghiệp, tạo vector chiều sâu.</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 89%;"></div>
+            </div>
+            <span class="progress-text">89%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">Projects</span>
+          <h2>Danh mục dự án nổi bật</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card animate-zoom delay-100">
+            <div class="project-image project-img-1"></div>
+            <div class="project-info">
+              <h3>Website Bán Hàng</h3>
+              <p>Giao diện thương mại điện tử tinh tế với trải nghiệm mua sắm tối giản, hiệu ứng hover mềm mại và quy trình thanh toán đơn giản.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="project-card animate-zoom delay-200">
+            <div class="project-image project-img-2"></div>
+            <div class="project-info">
+              <h3>LMS Dashboard</h3>
+              <p>Bảng điều khiển học trực tuyến với cấu trúc thông tin rõ ràng, giao diện quản lý khóa học hiện đại và tối ưu cho giáo viên.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="project-card animate-zoom delay-300">
+            <div class="project-image project-img-3"></div>
+            <div class="project-info">
+              <h3>School Website</h3>
+              <p>Thiết kế website trường học chuyên nghiệp, phản ánh thương hiệu thể chế, thông tin sinh viên và tính năng quản lý đơn giản.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
+          </article>
+
+          <article class="project-card animate-zoom delay-400">
+            <div class="project-image project-img-4"></div>
+            <div class="project-info">
+              <h3>Fashion Landing Page</h3>
+              <p>Trang đích thời trang hiện đại với phong cách minimalism, hình ảnh sản phẩm nổi bật và call-to-action rõ ràng, hiệu quả cao.</p>
+              <a href="#contact" class="project-btn">View Case Study →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <span class="section-label">Let's Work Together</span>
+          <h2>Bắt đầu dự án tiếp theo của bạn</h2>
+          <p>Tôi luôn sẵn sàng hợp tác cho những dự án thiết kế sáng tạo. Hãy liên hệ với tôi qua email hoặc các nền tảng mạng xã hội.</p>
+        </div>
+
+        <div class="contact-content">
+          <form class="contact-form animate-fade-up delay-100" method="GET" action="#contact">
+            <div class="form-group">
+              <input type="text" placeholder="Tên của bạn" required aria-label="Name" />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email của bạn" required aria-label="Email" />
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Nội dung tin nhắn..." rows="6" required aria-label="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+
+          <div class="contact-info animate-fade-up delay-200">
+            <div class="contact-card">
+              <h3>📧 Email</h3>
+              <p><a href="mailto:yenvy10a8@gmail.com">yenvy10a8@gmail.com</a></p>
+            </div>
+
+            <div class="contact-card">
+              <h3>📱 Social</h3>
+              <div class="social-links">
+                <a href="#" class="social-icon" aria-label="Behance">Behance</a>
+                <a href="#" class="social-icon" aria-label="Dribbble">Dribbble</a>
+                <a href="#" class="social-icon" aria-label="Facebook">Facebook</a>
+                <a href="#" class="social-icon" aria-label="GitHub">GitHub</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <h3>📍 Location</h3>
+              <p>Thành phố Hồ Chí Minh<br/>Việt Nam</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Võ Ngọc Yến Vy. All rights reserved.</p>
+      <a href="#home" class="back-to-top">↑ Back to Top</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yến Vy | Đồ Họa Kỹ Thuật Số Designer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -33,13 +361,6 @@
   <!-- Hero Section -->
   <main>
     <section id="home" class="hero-section">
-      <div class="hero-decor">
-        <span class="decor-circle decor-1"></span>
-        <span class="decor-circle decor-2"></span>
-        <span class="decor-circle decor-3"></span>
-        <div class="paw-trail trail-top"></div>
-        <div class="paw-trail trail-bottom"></div>
-      </div>
       <div class="container hero-grid">
         <div class="hero-copy animate-fade-up">
           <span class="eyebrow">Designer Portfolio</span>
@@ -58,6 +379,10 @@
               <strong>1</strong>
               <span>Year Experience</span>
             </div>
+            <div>
+              <strong>UI/UX</strong>
+              <span>Specialist</span>
+            </div>
           </div>
         </div>
 
@@ -70,7 +395,7 @@
             </div>
             <div class="profile-info">
               <h2>Võ Ngọc Yến Vy</h2>
-              <p>Công Nghệ Thông Tin · Sinh viên Đại học Gia Định</p>
+              <p>Công Nghệ Thông Tin · Designer</p>
             </div>
             <div class="profile-meta">
               <div>
@@ -85,7 +410,6 @@
           </div>
           <div class="floating-paw"></div>
           <div class="hero-particles">
-            <span class="particle"></span>
             <span class="particle"></span>
             <span class="particle"></span>
             <span class="particle"></span>
@@ -129,16 +453,6 @@
                 <p class="timeline-desc">Xây dựng danh mục dự án chuyên nghiệp, phong cách Apple Minimalism & Brand Design.</p>
               </div>
             </div>
-          </article>
-        </div>
-        <div class="about-stats animate-zoom delay-1">
-          <article class="stat-card">
-            <strong>10+</strong>
-            <span>Projects completed</span>
-          </article>
-          <article class="stat-card">
-            <strong>1 Year</strong>
-            <span>Experience in design</span>
           </article>
         </div>
       </div>
@@ -196,24 +510,40 @@
         <article class="project-card animate-zoom delay-1">
           <div class="project-image image-2"></div>
           <div class="project-copy">
-            <h3>School Website</h3>
-            <p>Thiết kế trang trường học chuyên nghiệp, phong cách sáng và gần gũi.</p>
+            <h3>LMS Dashboard</h3>
+            <p>Bảng điều khiển học trực tuyến với cấu trúc thông tin rõ ràng và nhẹ nhàng.</p>
             <a href="#contact" class="project-link">View Case Study</a>
           </div>
         </article>
         <article class="project-card animate-zoom delay-2">
           <div class="project-image image-3"></div>
           <div class="project-copy">
-            <h3>Fashion Landing Page</h3>
-            <p>Trang đích thời trang với màu sắc ấm áp và thương hiệu thanh lịch.</p>
+            <h3>School Website</h3>
+            <p>Thiết kế website trường học chuyên nghiệp, đúng phong cách thương hiệu.</p>
             <a href="#contact" class="project-link">View Case Study</a>
           </div>
         </article>
         <article class="project-card animate-zoom delay-3">
           <div class="project-image image-4"></div>
           <div class="project-copy">
+            <h3>UI Mobile App</h3>
+            <p>Giao diện ứng dụng di động đơn giản, thân thiện và dễ sử dụng.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-4">
+          <div class="project-image image-5"></div>
+          <div class="project-copy">
+            <h3>Fashion Landing Page</h3>
+            <p>Trang đích thời trang với hình ảnh ấm áp và nhấn mạnh phong cách.</p>
+            <a href="#contact" class="project-link">View Case Study</a>
+          </div>
+        </article>
+        <article class="project-card animate-zoom delay-5">
+          <div class="project-image image-6"></div>
+          <div class="project-copy">
             <h3>Education Platform</h3>
-            <p>Thiết kế nền tảng giáo dục trực tuyến thân thiện và dễ truy cập.</p>
+            <p>Thiết kế nền tảng giáo dục online hỗ trợ học viên dễ dàng tương tác.</p>
             <a href="#contact" class="project-link">View Case Study</a>
           </div>
         </article>
